@@ -1,0 +1,106 @@
+/*** Programming Languages Icon ***/
+
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.gap-4 { gap: 1rem; }
+.mt-5 { margin-top: 1.25rem; }
+.h-14 { height: 3.5rem; }
+.h-16 { height: 4rem; }
+
+
+/* Menu Bar - next pages*/
+.hover-effect {
+  position: relative;
+  display: inline-block;
+}
+.hover-effect::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  transition: width 0.3s ease;
+}
+.hover-effect:hover::after,
+.hover-effect.active::after { 
+  width: 100%;
+}
+.page-section {
+  display: none;
+}
+
+.page-section.active {
+  display: block;
+}
+
+.active {
+  color: black; 
+  font-size: 1.1em; 
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+50% {
+  transform: translateY(-20px);
+ }
+}
+.icon {
+      transition: transform 0.5s ease;
+}
+
+
+/** Mobile View Porfile img - home page **/
+.profile-img {
+  height: 600px;
+  width: auto;
+  max-width: 100%;
+}
+
+@media (max-width: 767px) {
+  .profile-img {
+    height: 300px; 
+    width: auto;
+    max-width: 100%;
+  }
+}
+
+
+
+
+
+/* black dots - projects rabbittech*/
+.custom-bullet::before {
+  content: "•";
+  color: black;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+
+
+
+/* Effect of text changing */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.cursor::after {
+  content: '|';
+  animation: blink 0.7s infinite;
+}
+
+
+
+
+/* About Pages - clicked*/
+.content-item {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+/* About pages - scroll bar hide*/

@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mico Galindez Profile</title>
+  <link rel="icon" type="logo" href="./images/logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./tailwind.config.js"></script>
+
+
+
+</head>
+<div class="overflow-x-hidden">
+
+<!-- Navigation Bar -->
+<nav class="w-full fixed top-0 left-0 px-5 lg:px-8 xl:px-[8%] py-4 flex flex-col md:flex-row items-center justify-center z-10 backdrop-blur-sm bg-cover bg-center bg-no-repeat" 
+     style="background-image: url('./images/header-bg.png');">
+  <!-- Mobile Layout: Logo at Top Left, Buttons at Right -->
+  <div class="flex w-full items-center justify-between md:hidden">
+    <!-- Left Side: Logo -->
+    <img src="./images/logo.png" alt="Logo" class="w-12 cursor-pointer">
+
+    <!-- Right Side: Toggle Theme and Menu Button (Contact Hidden on Mobile) -->
+    <div class="flex items-center gap-4">
+
+      <!-- Contact Button (Hidden on Mobile) -->
+      <a href="#contact" 
+         class="hidden items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full contact-link" 
+         onclick="showSection('contact')">
+         Contact
+         <img src="./images/arrow-icon.png" alt="Arrow" class="w-3">
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <button onclick="openMenu()">
+          <img src="./images/menu-black.png" alt="Menu" class="w-6">
+      </button>
+    </div>
+  </div>
+
+<!-- Desktop Layout: Original Structure -->
+  <div class="hidden md:flex w-full items-center justify-center">
+
+<!-- Logo -->
+    <img src="./images/logo.png" alt="Logo" class="w-12 cursor-pointer mr-14">
+
+<!-- Desktop Menu -->
+    <ul class="flex items-center gap-6 lg:gap-12 rounded-full px-12 py-3 bg-green shadow-sm bg-opacity-50 font-bold font-sans">
+        <li><a href="#home" class="hover-effect" onclick="showSection('home')">Home</a></li>
+        <li><a href="#about" class="hover-effect" onclick="showSection('about')">About</a></li>
+        <li><a href="#project" class="hover-effect" onclick="showSection('project')">Projects</a></li>
+        <li><a href="#certificate" class="hover-effect" onclick="showSection('certificate')">Certificates</a></li>
+        <li><a href="#contact" class="hover-effect" onclick="showSection('contact')">Contact</a></li>
+    </ul>
+
+<!-- Contact Button -->
+    <div class="flex items-center gap-4">
+
+<!-- Contact Button (Visible on Desktop) -->
+        <a href="#contact" 
+           class="flex items-center gap-3 px-10 py-2.5 border border-black rounded-full ml-4 contact-link" 
+           onclick="showSection('contact')">
+           Contact
+           <img src="./images/arrow-icon.png" alt="Arrow" class="w-3">
+        </a>
+
+<!-- Mobile Menu Button (Hidden on Desktop) -->
+        <button class="block md:hidden ml-3" onclick="openMenu()">
+            <img src="./images/menu-black.png" alt="Menu" class="w-6">
+        </button>
+    </div>
+  </div>
+
+<!-- Mobile Menu -->
+  <ul id="sideMenu" 
+  class="flex md:hidden flex-col gap-6 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen transition duration-500 font-bold font-sans bg-gradient-to-r from-[#c572ff] to-[#ff9e42] shadow-lg">
+
+<!-- Close Button -->
+  <div class="absolute top-6 right-6" onclick="closeMenu()">
+    <img src="./images/close-icon.png" alt="Close Menu" class="w-5 cursor-pointer">
+  </div>
+
+<!-- Mobile Menu Items -->
+  <li><a href="#home" onclick="closeMenu(); showSection('home')" 
+         class="hover-effect block px-4 py-3 text-center">Home</a></li>
+  <li><a href="#about" onclick="closeMenu(); showSection('about')" 
+         class="hover-effect block px-4 py-3 text-center">About</a></li>
+  <li><a href="#project" onclick="closeMenu(); showSection('project')" 
+         class="hover-effect block px-4 py-3 text-center">Projects</a></li>
+  <li><a href="#certificate" onclick="closeMenu(); showSection('certificate')" 
+         class="hover-effect block px-4 py-3 text-center">Certificates</a></li>
+  <li><a href="#contact" onclick="closeMenu(); showSection('contact')" 
+         class="hover-effect block px-4 py-3 text-center">Contact</a></li>
+</ul>
+</nav>
+
+
+
+
+<!-- Home Pages -->
+<div id="home" class="page-section relative">
+  <br>
+  <div class="mt-20 flex flex-wrap items-center justify-center md:justify-between">
+    <!-- Left Section -->
+    <div class="ml-0 md:ml-12 flex-1 text-center md:text-left">
+      <!-- Typing Text with Hand Icon -->
+      <h3 class="text-xl md:text-4xl font-extrabold font-sans bg-gradient-to-r from-[#ff9a3c] via-[#ff2a6d] to-[#9b36f2] text-transparent bg-clip-text drop-shadow-lg flex items-center justify-center md:justify-start gap-2">
+        <span id="typing-text"></span>
+        <img src="./images/hand-icon.png" alt="Waving Hand" class="w-8 transition-transform duration-300 ease-in-out origin-bottom-right" id="waving-hand">
+      </h3>
+
+      <!-- Name -->
+      <h3 class="font-bold text-3xl mt-5">Hello! I'm Mico Galindez</h3>
+
+      <!-- Title -->
+      <h2 id="job-title" class="text-4xl md:text-5xl font-extrabold mt-2 cursor"></h2>
+
+      <!-- Description -->
+      <p class="font-bold text-2xl mt-5 md:text-justify">
+        I'm an aspiring Software Engineer and a fresh graduate with a Bachelor of Science in Computer Engineering. I have experience in programming languages such as C#, .NET, C++, HTML, CSS, JavaScript, and Python.
+      </p>
+
+<!-- Buttons -->
+<div class="flex gap-4 mt-8 justify-center md:justify-start">
+  <a href="#contact" class="relative inline-block" onclick="showSection('contact')">
+    <div class="absolute inset-0 bg-gradient-to-r from-[#b820e6] to-[#da7d20] rounded-full blur-sm"></div>
+    <div class="relative px-6 py-2 sm:px-8 sm:py-2.5 md:px-10 md:py-3 bg-white text-black rounded-full flex items-center gap-2 border-2 border-transparent">
+      <span class="font-bold text-sm sm:text-base md:text-base">Join us now!</span>
+      <img src="./images/right-arrow-black.png" alt="Arrow" class="w-4 sm:w-4 md:w-5">
+    </div>
+  </a>
+  
+  <a href="./CV/Mico_Galindez_CV.pdf" download class="relative inline-block">
+    <div class="absolute inset-0 bg-gradient-to-r from-[#b820e6] to-[#da7d20] rounded-full blur-sm"></div>
+    <div class="relative px-6 py-2 sm:px-8 sm:py-2.5 md:px-10 md:py-3 bg-white text-black rounded-full flex items-center gap-2 border-2 border-transparent">
+      <span class="font-bold text-sm sm:text-base md:text-base">Download CV</span>
+      <img src="./images/download-icon.png" alt="Download Icon" class="w-3 sm:w-3 md:w-4">
+    </div>
+  </a>
+</div>
+
+      <!-- Programming Languages -->
+      <div class="mt-10">
+        <p class="text-2xl font-bold">Languages:</p>
+        <div class="flex items-center gap-4 flex-wrap mt-2 justify-center md:justify-start">
+          <img src="./images/cSharp-icon.png" alt="C#" class="h-14">
+          <img src="./images/dotNet-icon.png" alt=".NET" class="h-14">
+          <img src="./images/cPlusplus-icon.png" alt="C++" class="h-14">
+          <img src="./images/html-icon.png" alt="HTML" class="h-14">
+          <img src="./images/css-icon.png" alt="CSS" class="h-16">
+          <img src="./images/js-icon.png" alt="JavaScript" class="h-14">
+          <img src="./images/python-icon.png" alt="Python" class="h-14">
+        </div>
+      </div>
+
+      <!-- Social Media Links -->
+      <div class="mt-4">
+        <p class="text-2xl font-bold">GitHub & LinkedIn:</p>
+        <div class="flex gap-4 mt-4 justify-center md:justify-start">
+          <a href="https://github.com/galindezmics" target="_blank" rel="noopener noreferrer">
+            <img src="./images/github-icon.png" alt="GitHub" class="h-10">
+          </a>
+          <a href="https://www.linkedin.com/in/micsgalindez/" target="_blank" rel="noopener noreferrer">
+            <img src="./images/linkedIn-icon.png" alt="LinkedIn" class="h-11">
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Right Section (Profile Image) -->
+    <div class="flex flex-col items-center mr-0 md:mr-10 mt-8 md:mt-0 w-full md:w-auto">
+      <img src="./images/profile-img.png" alt="Profile Image" class="profile-img mx-auto">
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- About Page -->
+<div id="about" class="page-section relative">
+  <!-- Background Circles -->
+  <img src="./images/circle-left.png" alt="Circle Left" class="absolute top-0 left-0 w-[350px] h-[350px] object-contain -z-10" style="margin-top: 50px;">
+  <img src="./images/circle-right.png" alt="Circle Right" class="absolute top-0 right-0 w-[350px] h-[350px] object-contain -z-10" style="margin-top: 50px;">
+
+  <!-- About Me Section -->
+  <div class="flex justify-center items-center">
+    <div class="text-center max-w-[1000px] mt-16 mx-3">
+      <h4 class="mb-2 text-lg font-sans font-bold" style="margin-top: 50px;">Introduction</h4>
+      <h2 class="text-5xl font-sans font-bold">About Me</h2>
+      <p class="font-serif mt-4 text-gray-700">
+        Hello! I am Mico Galindez, and I hold a Bachelor of Science in Computer Engineering. I have experience with programming languages such as C#, .NET, C++, HTML, CSS, JavaScript, and Python. I have worked on two capstone projects and successfully completed two boot camps focused on front-end development and C# .NET, earning certifications.
+      </p>
+    </div>
+  </div>
+
+  <div class="flex flex-col md:flex-row items-center md:items-start">
+    <!-- Left Side Buttons -->
+    <div class="mt-[10px] md:mt-20 flex flex-col items-center gap-6 mx-[10px] md:ml-[10px] md:mr-[10px]">
+      <div class="relative toggle-btn" data-target="education-content">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#b820e6] to-[#da7d20] rounded-full blur-sm"></div>
+        <button class="relative flex items-center justify-between px-6 py-3 text-black font-extrabold text-xl rounded-full border-2 border-transparent bg-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl w-[280px]">
+          <span>Education</span>
+          <img src="./images/education-icon.png" alt="Education Icon" class="w-8 h-8">
+        </button>
+      </div>
+      
+      <div class="relative toggle-btn" data-target="languages-content">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#b820e6] to-[#da7d20] rounded-full blur-sm"></div>
+        <button class="relative flex items-center justify-between px-6 py-3 text-black font-extrabold text-xl rounded-full border-2 border-transparent bg-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl w-[280px]">
+          <span>Languages</span>
+          <img src="./images/code-icon.png" alt="Skills Icon" class="w-10 h-10">
+        </button>
+      </div>
+      
+      <div class="relative toggle-btn" data-target="projects-content">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#b820e6] to-[#da7d20] rounded-full blur-sm"></div>
+        <button class="relative flex items-center justify-between px-6 py-3 text-black font-extrabold text-xl rounded-full border-2 border-transparent bg-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl w-[280px]">
+          <span>Key Projects</span>
+          <img src="./images/project-icon.png" alt="Project Icon" class="w-8 h-8">
+        </button>
+      </div>
+      
+      <div class="relative toggle-btn" data-target="certificates-content">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#b820e6] to-[#da7d20] rounded-full blur-sm"></div>
+        <button class="relative flex items-center justify-between px-6 py-3 text-black font-extrabold text-xl rounded-full border-2 border-transparent bg-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl w-[280px]">
+          <span>Certificates</span>
+          <img src="./images/seminar-icon.png" alt="Seminar Icon" class="w-8 h-8">
+        </button>
+      </div>
+    </div>
+
+    <!-- Right Side Content -->
+    <div class="w-full md:w-3/4 p-4 mx-[10px] flex justify-center">
+      <ul class="space-y-6 w-full max-w-[800px] mt-[110px] md:mt-[110px]">
+        <!-- Education  -->
+        <li id="education-content" class="content-item relative border-[0.5px] border-black rounded-xl p-6 cursor-pointer hover:bg-gray-200 hover:-translate-y-1 duration-500 shadow-[4px_4px_0_#000] flex items-center justify-between opacity-100 translate-x-0 -mt-24 md:mt-0">
+          <div>
+            <img src="./images/education-icon.png" alt="Education Icon" class="w-10 mt-2">
+            <h3 class="my-4 font-sans font-bold text-black">Education</h3>
+            <h5 class="font-serif font-bold">Bachelor of Science in Computer Engineering</h5>
+            <p class="font-serif">Tanauan City College</p>
+            <p class="font-serif">2020 - 2024</p>
+          </div>
+          <div class="w-34 h-34 flex items-center justify-center">
+            <img src="./images/tcc-logo.png" alt="TCC Logo" class="w-32 h-32 object-contain">
+          </div>
+        </li>
+    
+        <!-- Languages, Frameworks & Database, and Controller -->
+        <li id="languages-content" class="content-item relative border-[0.5px] border-black rounded-xl p-6 cursor-pointer hover:bg-gray-200 hover:-translate-y-1 duration-500 shadow-[4px_4px_0_#000] flex flex-col items-start justify-between opacity-0 translate-x-4" style="margin-top: -100px;">
+          <div>
+            <img src="./images/code-icon.png" alt="Code Icon" class="w-12 mt-2">
+            <h3 class="my-4 font-sans font-bold text-black">Languages</h3>
+          </div>
+          <div class="flex flex-row flex-wrap gap-4 items-center mb-4">
+            <img src="./images/cSharp-icon.png" alt="C#" class="h-14 icon">
+            <img src="./images/dotNet-icon.png" alt=".NET" class="h-14 icon">
+            <img src="./images/cPlusplus-icon.png" alt="C++" class="h-14 icon">
+            <img src="./images/html-icon.png" alt="HTML" class="h-14 icon">
+            <img src="./images/css-icon.png" alt="CSS" class="h-16 icon">
+            <img src="./images/js-icon.png" alt="JavaScript" class="h-14 icon">
+            <img src="./images/python-icon.png" alt="Python" class="h-14 icon">
+          </div>
+          <div>
+            <h3 class="my-4 font-sans font-bold text-black">Frameworks & Database</h3>
+          </div>
+          <div class="flex flex-row flex-wrap gap-4 items-center mb-4">
+            <img src="./images/aspDotNetCore.png" alt="ASP.NET Core" class="h-14 icon">
+            <img src="./images/entityFramework.png" alt="Entity Framework" class="h-16 icon">
+            <img src="./images/tailwindCSS.png" alt="Tailwind CSS" class="h-14 icon">
+            <img src="./images/msSQL.png" alt="MS SQL" class="h-14 icon">
+          </div>
+          <div>
+            <h3 class="my-4 font-sans font-bold text-black">Controller</h3>
+          </div>
+          <div class="flex flex-row flex-wrap gap-4 items-center">
+            <img src="./images/git-icon.png" alt="Git" class="h-14 icon">
+            <img src="./images/gitHub.png" alt="GitHub" class="h-14 icon">
+          </div>
+        </li>
+    
+<!-- Key Projects -->
+<li id="projects-content" class="content-item relative border-[0.5px] border-black rounded-xl p-6 cursor-pointer hover:bg-gray-200 hover:-translate-y-1 duration-500 shadow-[4px_4px_0_#000] flex items-center justify-between opacity-0 translate-x-4 mt-[-48px] md:mt-[-40px]" style="margin-top: -40px;">
+  <div class="w-full">
+    <img src="./images/project-icon.png" alt="Project Icon" class="w-10 mt-2">
+    <h3 class="my-4 font-sans font-bold text-black">Key Projects</h3>
+    <div class="mb-6">
+      <div class="flex items-center gap-2">
+        <img src="./images/pin-con.png" alt="Pin" class="w-5 h-5">
+        <div>
+          <h5 class="font-serif font-bold relative">RABBITECH: Automatic Feeding and Monitoring System for Rabbitry</h5>
+          <p class="font-serif pl-0">January 2023 to June 2024</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="flex items-center gap-2">
+        <img src="./images/pin-con.png" alt="Pin" class="w-5 h-5">
+        <div>
+          <h5 class="font-serif font-bold relative">Monitoring System using VBA Macro for Enhancing the Safety of Visitors in Tanauan City College</h5>
+          <p class="font-serif pl-0">June 2022</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>
+
+<!-- Certificates -->
+<li id="certificates-content" class="content-item relative border-[0.5px] border-black rounded-xl p-6 cursor-pointer hover:bg-gray-200 hover:-translate-y-1 duration-500 shadow-[4px_4px_0_#000] flex items-center justify-between opacity-0 translate-x-4 mt-[-96px] md:mt-[-30px]" style="margin-top: -30px;">
+  <div class="w-full">
+    <img src="./images/seminar-icon.png" alt="Seminar Icon" class="w-10 mt-2">
+    <h3 class="my-4 font-sans font-bold text-black">Trainings and Seminars (with certificates)</h3>
+    <div class="mb-6">
+      <div class="flex items-center gap-2">
+        <img src="./images/pin-con.png" alt="Pin" class="w-5 h-5">
+        <div>
+          <h5 class="font-serif font-bold relative">Frontend Fundamentals Bootcamp</h5>
+          <p class="font-serif pl-0">July - August 2024</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="flex items-center gap-2">
+        <img src="./images/pin-con.png" alt="Pin" class="w-5 h-5">
+        <div>
+          <h5 class="font-serif font-bold relative">CODEQUEST: from code Novice to Job-ready Engineer - C#.NET</h5>
+          <p class="font-serif pl-0">May - July 2024</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  
+
+
+<!-- Project Pages -->
+<div id="project" class="page-section relative">
+  <div class="w-full px-[12%] py-10">
+    <br><br><br>
+    <h2 class="text-center text-4xl font-sans font-bold">Key Projects</h2>
+    <br><br>
+    <ul>   
+      <li class="relative border-[3px] border-black rounded-xl p-6 cursor-pointer hover:bg-[#fcf4ff] hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]">
+        <div class="w-full">
+          <!-- Centered Video with custom play button -->
+          <div class="flex justify-center relative">
+            <video width="320" height="240" class="mt-2" id="rabbittechVideo1">
+              <source src="./videos/rabbittech-vid.mp4" type="video/mp4">
+            </video>
+            <!-- Custom Play Button -->
+            <button id="playButton1" class="absolute inset-0 flex items-center justify-center text-white bg-black bg-opacity-50 rounded-xl hover:bg-opacity-70 transition-opacity duration-300">
+              <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </button>
+          </div>
+      
+          <div>
+            <!-- Centered Title -->
+            <h3 class="my-4 font-sans font-bold text-black text-center">Title: RABBITECH: Automatic Feeding and Monitoring System for Rabbitry</h3>
+            <!-- Justified Text -->
+            <p class="font-serif mb-3 text-justify">Mico and the research group developed Rabbitech, a rabbit care technology that enhances rabbit care through its app, efficiently managing feeding schedules and water levels. The application was developed using C++ programming language, VS Code, and Flutter IDE, ensuring efficient performance. The system integrates Arduino IDE, Arduino UNO, NodeMCU, ultrasonic sensors, load cells, RTC, and DHT22 sensors to maintain optimal conditions and enable precise food dispensing. Its compact design allows for easy installation in cages.</p>
+            <p class="font-sans font-bold text-justify">Major Responsibilities:</p>
+            <p class="font-sans text-justify custom-bullet ml-7">Programming and Testing</p>
+            <p class="font-sans text-justify custom-bullet ml-7">Created a mobile application.</p>
+            <p class="font-sans text-justify custom-bullet ml-7">Writing of technical documents</p>
+            <p class="font-sans text-justify custom-bullet ml-7"><span class="font-sans font-bold"><u>Technologies:</u></span> C++, VSCode, Flutter, Arduino IDE, & NodeMCU</p>
+            <p class="font-sans text-justify custom-bullet ml-7"><span class="font-sans font-bold"><u>Other technologies such as hardware:</u></span> Arduino UNO, NodeMCU, DHT22 Sensor, Geared Motor, Load Cell Amplifier, Ultrasonic Sensor, RTC Module, Ultrasonic Module, and Servo Motor</p>
+          </div>
+        </div>
+      </li>
+
+      <br>
+
+      <li class="relative border-[3px] border-black rounded-xl p-6 cursor-pointer hover:bg-[#fcf4ff] hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]">
+        <div class="w-full">
+          <!-- Centered Video with custom play button -->
+          <div class="flex justify-center relative">
+            <video width="320" height="240" class="mt-2" id="rabbittechVideo2">
+              <source src="./videos/monitoring-system.mp4" type="video/mp4">
+            </video>
+            <!-- Custom Play Button -->
+            <button id="playButton2" class="absolute inset-0 flex items-center justify-center text-white bg-black bg-opacity-50 rounded-xl hover:bg-opacity-70 transition-opacity duration-300">
+              <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </button>
+          </div>
+      
+          <div>
+            <!-- Centered Title -->
+            <h3 class="my-4 font-sans font-bold text-black text-center">Title: Monitoring System using VBA Macro for Enhancing the Safety of Visitors in Tanauan City College</h3>
+            <!-- Justified Text -->
+            <p class="font-serif mb-3 text-justify">Mico and the research group developed a monitoring system using VBA macro can significantly enhance the safety of visitors in Tanauan City College. VBA, a visual basic for applications programming language, can be utilized to create a macro that automatically tracks and records visitors' information, including their names, contact details, and the purpose of their visit. This information can then be used to create a comprehensive database that can be accessed by authorized personnel.</p>
+            <p class="font-sans font-bold text-justify">Major Responsibilities:</p>
+            <p class="font-sans text-justify custom-bullet ml-7">Programming and Testing</p>
+            <p class="font-sans text-justify custom-bullet ml-7">Writing of technical documents</p>
+            <p class="font-sans text-justify custom-bullet ml-7"><span class="font-sans font-bold"><u>Technologies:</u></span> Excel & Visual Basic for Applications - VBA Programming</p>
+          </div>
+        </div>
+      </li>
+    </ul> 
+  </div>
+</div>
+
+
+
+
+<!-- Certificates Pages -->
+<div id="certificate" class="page-section relative">
+  <!-- Background Left and right -->
+  <img src="./images/bg-left.png" alt="Circle Left" class="absolute top-0 left-0  object-contain -z-10" style="margin-top: 50px;">
+  <img src="./images/bg-right.png" alt="Circle Right" class="absolute bottom-0-0 right-0  object-contain -z-10" style="margin-top: 50px;">
+
+  <!-- Certificates Header -->
+  <div class="flex justify-center items-center">
+    <div class="text-center max-w-[1000px] mt-16 mx-3">
+      <h4 class="mb-2 text-lg font-sans font-bold" style="margin-top: 50px;">My Achievements</h4>
+      <h2 class="text-5xl font-sans font-bold">Certificates</h2>
+      <p class="font-serif mt-4 text-gray-700">
+        Here are my professional certifications and training accomplishments that demonstrate my skills and knowledge in various technologies.
+      </p>
+    </div>
+  </div>
+
+
+  <div class="flex flex-col md:flex-row items-center md:items-start">
+    <!-- Left Side Buttons -->
+    <div class="flex flex-col items-center gap-6 mx-[10px] md:ml-[10px] md:mr-[10px] md:mt-40">
+      <!-- Your button elements remain exactly the same -->
+      <div class="relative toggle-btn-cert" data-target="codequest-content">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#b820e6] to-[#da7d20] rounded-full blur-sm"></div>
+        <button class="relative flex items-center justify-center px-6 py-3 text-black font-extrabold text-xl rounded-full border-2 border-transparent bg-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl w-[320px]">
+          <span class="text-center">CODEQUEST - C#.NET</span>
+        </button>
+      </div>
+      
+      <div class="relative toggle-btn-cert" data-target="csharp-content">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#b820e6] to-[#da7d20] rounded-full blur-sm"></div>
+        <button class="relative flex items-center justify-center px-6 py-3 text-black font-extrabold text-xl rounded-full border-2 border-transparent bg-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl w-[320px]">
+          <span class="text-center">C# freeCodeCamp</span>
+        </button>
+      </div>
+      
+      <div class="relative toggle-btn-cert" data-target="frontend-content">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#b820e6] to-[#da7d20] rounded-full blur-sm"></div>
+        <button class="relative flex items-center justify-center px-6 py-3 text-black font-extrabold text-xl rounded-full border-2 border-transparent bg-white shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl w-[320px]">
+          <span class="text-center">Frontend Development</span>
+        </button>
+      </div>
+    </div>
+
+<!-- Right Side Content -->
+<div class="w-full md:w-3/4 p-4 mx-[10px] flex justify-center">
+  <ul class="space-y-6 w-full max-w-[800px] mt-[110px] md:mt-[110px]">
+    <!-- CODEQUEST Certificate - Default visible -->
+    <li id="codequest-content" class="cert-content-item relative border-[3px] border-black rounded-xl p-6 cursor-pointer hover:bg-[#fcf4ff] hover:-translate-y-1 duration-500 shadow-[4px_4px_0_#000] flex items-center justify-between opacity-100 translate-x-0">
+      <div class="w-full">
+        <img src="./certificates/CODEQuest-Certificate.png" alt="CODEQUEST Certificate" class="mx-auto block w-full max-w-[450px]">
+        <h3 class="my-4 font-sans font-bold text-black text-center text-lg">CODEQUEST: from code Novice to Job-ready Engineer</h3>
+        <h5 class="font-serif text-justify mt-3 text-sm">I learned different web development techniques during an 8-week intensive boot camp, gaining programming skills in C#, .NET, and HTML/CSS, as well as experience with frameworks such as Entity Framework Core and ASP.NET Core MVC. The database used was MS SQL Server. I also learned about Git and GitHub controllers.</h5>
+        <p class="font-sans text-justify mt-3 text-sm"><span class="font-sans font-bold"><u>Technologies:</u></span> C#, .NET, HTML/CSS, Entity Framework Core, ASP.NET Core MVC, MS SQL Server, Git, GitHub, VSCode</p>
+      </div>
+    </li>
+
+    <!-- C# Certificate -->
+    <li id="csharp-content" class="cert-content-item relative border-[3px] border-black rounded-xl p-6 cursor-pointer hover:bg-[#fcf4ff] hover:-translate-y-1 duration-500 shadow-[4px_4px_0_#000] flex items-center justify-between opacity-0 translate-x-4">
+      <div class="w-full">
+        <img src="./certificates/CSharp-Certificate.png" alt="C# Certificate" class="mx-auto block w-full max-w-[400px]">
+        <h3 class="my-4 font-sans font-bold text-black text-center text-base">Foundational C# with Microsoft</h3>
+        <h5 class="font-serif text-justify mt-3 text-xs leading-5">I completed the Foundational C# with Microsoft in FreeCodeCamp, where I learned C# basics, variables, data handling, and string formatting. I built projects like a student grade calculator and created C# console applications using Visual Studio Code and the .NET library. I practiced if-else statements, loops, switch cases, and arrays to manage data. I also learned methods, debugging, and error handling to write clean and reusable code. Through projects, I applied these skills to real tasks, improving my coding and problem-solving skills.</h5>
+        <p class="font-sans text-justify mt-3 text-xs"><span class="font-sans font-bold"><u>Technologies:</u></span> C#, .NET, Console App, Visual Studio Code</p>
+      </div>
+    </li>
+
+    <!-- Frontend Certificate -->
+    <li id="frontend-content" class="cert-content-item relative border-[3px] border-black rounded-xl p-6 cursor-pointer hover:bg-[#fcf4ff] hover:-translate-y-1 duration-500 shadow-[4px_4px_0_#000] flex items-center justify-between opacity-0 translate-x-4">
+      <div class="w-full">
+        <img src="./certificates/FrontEnd-Certificate.png" alt="Frontend Certificate" class="mx-auto block w-full max-w-[400px]">
+        <h3 class="my-4 font-sans font-bold text-black text-center text-base">Frontend Fundamentals Bootcamp</h3>
+        <h5 class="font-serif text-justify mt-3 text-xs leading-5">I completed a 2-week front-end development boot camp, where I learned HTML, CSS, JavaScript, Git, GitHub, and Visual Studio Code. The training focused on building responsive websites, managing version control with Git, and collaborating through GitHub. I gained hands-on experience in writing clean code, debugging, and structuring web pages. Through practical projects, I applied these skills to develop interactive web applications, further enhancing my development skills.</h5>
+        <p class="font-sans text-justify mt-3 text-xs"><span class="font-sans font-bold"><u>Technologies:</u></span> HTML, CSS, JavaScript, VS Code, Git, and GitHub</p>
+      </div>
+    </li>
+  </ul>
+</div>
+  </div>
+</div>
+
+
+
+
+<!-- Contact Pages-->
+<div id="contact" class="page-section relative w-full px-[10px] py-10 scroll-mt-20 bg-[url('./images/footer-bg.jpg')] bg-no-repeat bg-[length:100%_auto] bg-bottom">
+  <!-- Contact Header -->
+  <br><br><br>
+  <h3 class="text-center text-4xl font-sans font-bold">Connect with Me!</h3>
+  <p class="text-center max-w-2xl mx-auto mt-5 mb-12">Feel free to explore and reach out if you have any questions or would like to connect with me!</p>
+
+  <!-- Contact Form Section with Background -->
+  <div class="bg-[url('./images/contact-bg.png')]">
+    <!-- Contact Form -->
+    <div class="max-w-6xl mx-auto px-4 py-8">
+      <!-- Mobile: Contact Form First -->
+      <div class="block md:hidden w-full bg-white p-6 rounded-lg shadow-lg mb-6">
+        <h2 class="text-2xl font-bold mb-4">CONTACT US</h2>
+        <p class="text-sm text-gray-600 mb-4">If you have any further concerns or require additional information, please do not hesitate to reach out to me directly.</p>
+        
+        <div>
+          <div class="mb-4">
+            <label class="block text-sm font-medium">Full Name</label>
+            <input type="text" id="name-mobile" class="w-full p-3 bg-white border border-gray-200 rounded" name="Full Name" required>
+          </div>
+          
+          <div class="mb-4">
+            <label class="block text-sm font-medium">Your Email</label>
+            <input type="email" id="email-mobile" class="w-full p-3 bg-white border border-gray-200 rounded" name="Your Email" required>
+          </div>
+      
+          <div class="mb-4">
+            <label class="block text-sm font-medium">Your Message</label>
+            <textarea rows="4" id="message-mobile" class="w-full p-3 bg-white border border-gray-200 rounded" name="Your Message" required></textarea>
+          </div>
+          
+          <div class="flex justify-center">
+            <button onclick="sendMailMobile()" type="button" class="bg-[#b820e6] hover:bg-[#da7d20] text-white font-medium py-2 px-6 rounded-full inline-flex items-center">
+              Send Message
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- City Name and Country -->
+      <div class="mb-2" style="margin-left: 20px;">
+        <h2 class="text-xl font-semibold">Tanauan City, Batangas</h2>
+        <p class="text-gray-600">Philippines</p>
+      </div>
+      
+      <!-- Map and Contact Form side by side -->
+      <div class="flex flex-col md:flex-row gap-4">
+        <!-- Map container -->
+        <div class="w-full md:w-2/3" style="margin: 10px;">
+          <!-- Relative container for map and pin -->
+          <div class="relative" style="width: 100%; height: 420px;">
+            <!-- Google Maps iframe -->
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61916.16484607681!2d121.0676613840682!3d14.091322201948048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd6f72ec612957%3A0xb38df4072fe465d6!2sTanauan%2C%20Batangas!5e0!3m2!1sen!2sph!4v1743500821943!5m2!1sen!2sph" 
+              width="100%" 
+              height="420px" 
+              frameborder="0" 
+              style="border:0; border-radius: 15px;" 
+              allowfullscreen="">
+            </iframe>
+            <!-- Pin image positioned at Tanauan -->
+            <img 
+              src="./images/pin-map.png" 
+              alt="pin-map" 
+              class="absolute" 
+              style="height: 50px; top: 50%; left: 50%; transform: translate(300%, -70%);"
+            >
+          </div>
+          
+          <div class="mt-6 flex flex-wrap items-center justify-center md:justify-end md:mr-20 gap-3">
+            <!-- Phone -->
+            <div class="relative inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm pl-2 pr-3 py-1.5 rounded-lg border border-gray-200/50">
+              <img src="./images/phoneNumber-icon.png" alt="phoneNumber" class="h-[20px] w-[20px] sm:h-[22px] sm:w-[22px] md:h-[25px] md:w-[25px] object-contain">
+              <p class="text-sm sm:text-sm md:text-base font-medium text-gray-800 whitespace-nowrap">
+                +639-510-796-834
+              </p>
+            </div>
+          
+            <!-- Email -->
+            <div class="relative inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm pl-2 pr-3 py-1.5 rounded-lg border border-gray-200/50">
+              <img src="./images/mail-icon.png" alt="email" class="h-[20px] w-[20px] sm:h-[22px] sm:w-[22px] md:h-[25px] md:w-[25px] object-contain">
+              <p class="text-sm sm:text-sm md:text-base font-medium text-gray-800 whitespace-nowrap">
+                galindezmico@gmail.com
+              </p>
+            </div>
+          </div>
+          
+
+        </div>
+        
+        <!-- Desktop: Contact Form -->
+        <div class="hidden md:block w-full md:w-1/2 bg-white p-6 rounded-lg shadow-lg" style="margin: 10px;">
+          <h2 class="text-2xl font-bold mb-4">CONTACT US</h2>
+          <p class="text-sm text-gray-600 mb-4">If you have any further concerns or require additional information, please do not hesitate to reach out to me directly.</p>
+          
+          <div>
+            <div class="mb-4">
+              <label class="block text-sm font-medium">Full Name</label>
+              <input type="text" id="name" class="w-full p-3 bg-white border border-gray-200 rounded" name="Full Name" required>
+            </div>
+            
+            <div class="mb-4">
+              <label class="block text-sm font-medium">Your Email</label>
+              <input type="email" id="email" class="w-full p-3 bg-white border border-gray-200 rounded" name="Your Email" required>
+            </div>
+        
+            <div class="mb-4">
+              <label class="block text-sm font-medium">Your Message</label>
+              <textarea rows="4" id="message" class="w-full p-3 bg-white border border-gray-200 rounded" name="Your Message" required></textarea>
+            </div>
+            
+            <div class="flex justify-center">
+              <button onclick="sendMail()" type="button" class="bg-[#b820e6] hover:bg-[#da7d20] text-white font-medium py-2 px-6 rounded-full inline-flex items-center">
+                Send Message
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Modal for Success Message -->
+  <div id="successModal" class="fixed inset-0 bg-gray-800 flex bg-opacity-50 items-center justify-center hidden">
+    <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center space-y-4">
+      <div class="flex items-center space-x-2">
+        <p class="text-2xl font-medium">Email Sent Successfully!</p>
+        <svg class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" stroke-width="2" fill="none"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"/>
+        </svg>
+      </div>
+      <button onclick="closeModal()" class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded">OK</button>
+    </div>
+  </div>
+
+  <!-- Custom Modal for Error Message -->
+  <div id="errorModal" class="fixed inset-0 bg-gray-800 flex bg-opacity-50 items-center justify-center hidden">
+    <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center space-y-4">
+      <div class="flex items-center space-x-2">
+        <p class="text-2xl font-medium" id="errorMessage">Failed to send email</p>
+        <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" stroke-width="2" fill="none"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </div>
+      <button onclick="closeModal()" class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded">OK</button>
+    </div>
+  </div>
+
+  <br><br>
+  <!-- Footer Content -->
+  <div class="text-center sm:flex items-center justify-between border-t border-gray-400 mx-[10%] mt-12 py-6">
+    <p>© 2025 Mico Galindez. All rights reserved.</p>
+    <ul class="flex items-center justify-center gap-2 mt-4 sm:mt-0">
+      <li>
+        <a href="https://github.com/galindezmics" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2">
+          <img src="./images/github-icon.png" alt="GitHub" class="h-10">
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/micsgalindez/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2">
+          <img src="./images/linkedIn-icon.png" alt="LinkedIn" class="h-11">
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "0tr-TxhW3tN7hdayI",
+      });
+   })();
+  </script>
+<script src="./script.js"></script>
+
+</div>
+  
+</body>
+</html>
